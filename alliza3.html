@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LUXURY HOME</title>
+  <style>
+
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: #10375C;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 18px;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      background-color: #28527a;
+    }
+
+    .hero {
+      position: relative;
+      text-align: center;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+    }
+
+    .watermark {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 5px 10px;
+    }
+
+    .container {
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .container h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .container p {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+
+    .houses {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 25px;
+      margin-top: 30px;
+    
+    }
+
+    .house-box {
+      background-color: #fff;
+      border: 2px solid #ddd;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      width: 300px;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .house-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .house-box img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+
+    .house-box h1 {
+      margin-top: 20px;
+      font-size: 10px;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .popup-content {
+      margin: 5% auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 80%;
+      position: relative;
+    }
+
+    .popup-content img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      color: black;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .house-box {
+        width: 90%;
+      }
+
+      .houses {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    footer {
+      background: #10375C;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+  
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999; 
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .close-btn {
+      font-size: 28px;
+      color: #aaa;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <img src="logo.jpg.png" alt="Logo">
+    </div>
+    <nav>
+      <a href="Jovon.html">Home</a>
+      <a href="javascript:void(0);" onclick="openModal()">About Us</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="https://i.pinimg.com/736x/2f/00/5f/2f005fc2b63428cb17340d14221fc601.jpg" alt="Subdivision Entrance">
+    <div class="watermark"><h1>LUXURY HOME</h1></div>
+  </section>
+
+  <div class="container">
+    <h2>Description</h2>
+    <p>
+      Our luxury home offers plenty of space, elegant modern design, and top-notch materials and appliances.
+      These homes often include extras like a swimming pool, spacious garage, and are usually found in exclusive, upscale neighborhoods.
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="houses">
+      <div class="house-box">
+        <img src="https://i.pinimg.com/736x/62/5d/fd/625dfd918fcd42dc8875de3efea5a4dd.jpg" alt="Rooms">
+        <h1>Rooms</h1>
+      </div>
+      <div class="house-box">
+        <img src="https://i.pinimg.com/736x/81/28/f1/8128f1ae1ede3ae48b4c259919f67906.jpg" alt="Outside">
+        <h1>Outside</h1>
+      </div>
+      <div class="house-box">
+        <img src="https://i.pinimg.com/736x/3f/a8/e7/3fa8e71e58196b50113ac265455be752.jpg" alt="Garage Area">
+        <h1>Garage Area</h1>
+      </div>
+    </div>
+
+    <div class="houses">
+      <div class="house-box">
+        <img src="https://i.pinimg.com/736x/19/75/4b/19754b61350d956e3b6d5fd9bf8a859b.jpg" alt="Living Area">
+        <h1>Living Area</h1>
+      </div>
+      <div class="house-box">
+        <img src="https://i.pinimg.com/736x/f0/22/54/f022547336f94b0a344314878a2ed2e8.jpg" alt="Comfort Room">
+        <h1>Comfort Room</h1>
+      </div>
+      <div class="house-box">
+        <img src="https://i.pinimg.com/736x/b2/9c/52/b29c52234a3c750c3c42fbe54a57015a.jpg" alt="Kitchen">
+        <h1>Kitchen</h1>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Contact Us: 0912-345-6789</p>
+    <p>Email: info@luxehaven.com</p>
+  </footer>
+
+  
+  <div id="aboutModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2>About Us</h2>
+      <p>
+        We are a premier luxury home builder, offering sophisticated designs with premium materials. Our homes provide the utmost comfort and elegance, designed for those who appreciate quality and luxury.
+      </p>
+      
+      <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d252620.4698859501!2d124.63272565000001!3d8.38248735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32fff2d9810e9e81%3A0x2edcd5b84a6de2a2!2sCagayan%20de%20Oro%2C%20Misamis%20Oriental!5e0!3m2!1sen!2sph!4v1744304208804!5m2!1sen!2sph"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById('aboutModal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('aboutModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('aboutModal');
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+
