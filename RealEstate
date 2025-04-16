@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Estate - Luxehaven</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #10375C;
+      color: white;
+      padding: 10px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo-section img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+    }
+
+    .logo-section h1 {
+      font-size: 30px;
+      margin: 0;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav button {
+      background-color: #ffffff;
+      color: #10375C;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    nav button:hover {
+      background-color: #ddd;
+    }
+
+    .hero {
+      position: relative;
+      text-align: center;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+    }
+
+    .watermark {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 5px 10px;
+    }
+
+    .container {
+      padding: 20px;
+      text-align: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .houses {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+    }
+
+    .house-box {
+      border: 5px solid #ddd;
+      padding: 15px;
+      width: 30%;
+      height: 400px;
+      border-radius: 25px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 6px 20px rgba(0,0,0,0.19);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+    }
+
+    .house-box img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .house-box button {
+      background: #2980b9;
+      color: white;
+      border: none;
+      padding: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 40px 30px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 900px;
+      position: relative;
+      animation: slideIn 0.4s ease-out;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 24px;
+      color: #aaa;
+      cursor: pointer;
+    }
+
+    .modal-content h2 {
+      color: #4ea1f5;
+      margin-bottom: 20px;
+    }
+
+    .modal-content p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes slideIn {
+      from {transform: translateY(-30px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+
+    @media (max-width: 768px) {
+      .modal-content {
+        padding: 20px;
+      }
+
+      iframe {
+        height: 300px;
+      }
+    }
+
+    footer {
+      background: #34495e;
+      color: white;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-section">
+      <img src="logo.jpg.png" alt="Logo">
+      <h1>LUXEHAVEN</h1>
+    </div>
+    <nav>
+      <button onclick="openModal()">About Us</button>
+      <button onclick="window.location.href='alliza5.html'">Reserve Now</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="https://i.pinimg.com/736x/8c/75/50/8c7550fbc977751dd14b9afd8bfd1adb.jpg" alt="Subdivision Entrance">
+    <div class="watermark"><h1>LUXEHAVEN</h1></div>
+  </section>
+
+  <div class="container">
+    <h2>Our Home Selections</h2>
+    <div class="houses">
+      <div class="house-box">
+        <h3>Luxe Home</h3>
+        <img src="https://i.pinimg.com/736x/2f/00/5f/2f005fc2b63428cb17340d14221fc601.jpg">
+        <h4>₱50,000,000.00</h4>
+        <button onclick="window.location.href='alliza3.html'">View Details</button>
+      </div>
+
+      <div class="house-box">
+        <h3>Modest Home</h3>
+        <img src="https://www.brittany.com.ph/wp-content/uploads/2020/08/Brittany_Portofino_Morning_Bliss-compressed-compressed-compressed-scaled.jpg">
+        <h4>₱25,000,000.00</h4>
+        <button onclick="window.location.href='alliza2.html'">View Details</button>
+      </div>
+
+      <div class="house-box">
+        <h3>Compact Home</h3>
+        <img src="https://i.pinimg.com/736x/85/23/78/852378c875168414fa8d17bfe2ee2261.jpg">
+        <h4>₱5,000,000.00</h4>
+        <button onclick="window.location.href='alliza.html'">View Details</button>
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="aboutModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2>About Us</h2>
+      <p>
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+      </p>
+      <h3 style="color: #4ea1f5; margin-bottom: 10px;">Our Location</h3>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d252620.4698859501!2d124.63272565000001!3d8.38248735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32fff2d9810e9e81%3A0x2edcd5b84a6de2a2!2sCagayan%20de%20Oro%2C%20Misamis%20Oriental!5e0!3m2!1sen!2sph!4v1744304208804!5m2!1sen!2sph"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById('aboutModal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('aboutModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('aboutModal');
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+  <footer>
+    <p>Contact Us: 0912-345-6789</p>
+    <p>Email: info@luxehaven.com</p>
+  </footer>
+
+</body>
+</html>
